@@ -30,9 +30,11 @@ export function SiteHeader() {
       {/* Main header */}
       <div className="mx-auto flex w-full max-w-[1300px] items-center justify-between px-4 sm:px-6 py-4 sm:py-6">
         <div className="flex items-center gap-3">
-          <div className="text-xl sm:text-2xl font-semibold text-[#4A0F1F]">
-            Eduvet.
-          </div>
+          <h1 className="text-xl sm:text-2xl font-semibold text-[#4A0F1F]">
+            <a href="/" aria-label="Eduvet University Home">
+              Eduvet.
+            </a>
+          </h1>
         </div>
 
         {/* Desktop Navigation */}

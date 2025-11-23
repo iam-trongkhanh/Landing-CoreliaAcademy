@@ -25,12 +25,12 @@ export function Hero() {
             <p className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.4em] sm:tracking-[0.5em] text-[#A5495C]">
               Meet with #01 university
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-[#1B1B1B] max-w-full lg:max-w-[700px] px-4 lg:px-0">
-              Most reputed educational{" "}
-              <span className="text-[#7A1D32]">institution</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-[#1B1B1B] max-w-full lg:max-w-[700px] px-4 lg:px-0">
+              Most Reputed Educational{" "}
+              <span className="text-[#7A1D32]">Institution</span>
               <br />
               in Booston
-            </h1>
+            </h2>
 
             {/* Button apply */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 px-4 lg:px-0">
@@ -48,11 +48,12 @@ export function Hero() {
             {/* Image full height */}
             <Image
               src="/images/hero-student.jpg"
-              alt="Student smiling with book"
+              alt="Student smiling with book at Eduvet University - Quality Education in NYC"
               fill
               className="object-cover object-center"
               priority
               sizes="(max-width: 768px) 400px, (max-width: 1024px) 600px, 830px"
+              quality={90}
             />
 
             {/* Award box */}
