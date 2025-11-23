@@ -7,6 +7,12 @@ import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 import { ContentMarquee } from "@/components/ContentMarquee";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { ProgramCard } from "@/components/cards/ProgramCard";
+import { TestimonialCard } from "@/components/cards/TestimonialCard";
+import { FormInput } from "@/components/ui/FormInput";
+import { FormTextarea } from "@/components/ui/FormTextarea";
+import { Button } from "@/components/ui/Button";
+import { UserIcon, EmailIcon, PenIcon } from "@/components/icons/FormIcons";
 
 const programs = [
   {
@@ -99,13 +105,13 @@ export default function ProgramsPage() {
     <div className="bg-white text-[#1B1B1B]">
       <SiteHeader />
 
-      <main className="flex flex-col gap-24 bg-white pb-24 pt-0">
+      <main className="flex flex-col gap-12 sm:gap-16 md:gap-20 lg:gap-24 bg-white pb-12 sm:pb-16 md:pb-20 lg:pb-24 pt-0">
         {/* Programs Overview Section */}
-        <section className="bg-white py-24">
-          <div className="mx-auto flex w-full max-w-[1300px] flex-col gap-16 px-6">
+        <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+          <div className="mx-auto flex w-full max-w-[1300px] flex-col gap-8 sm:gap-12 md:gap-16 px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center">
-                <h2 className="text-5xl font-semibold leading-tight text-[#1B1B1B]">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-[#1B1B1B] px-2 sm:px-4 break-words">
                   University expertise:
                   <br />
                   <span className="text-[#641320]">Social science</span>
@@ -115,44 +121,14 @@ export default function ProgramsPage() {
 
             {/* Programs Grid */}
             <AnimateOnScroll>
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {programs.map((program) => (
-                  <div
+                  <ProgramCard
                     key={program.name}
-                    className="group relative flex min-h-[360px] flex-col overflow-hidden  border border-[#641320] bg-white p-8 transition-all duration-500 hover:border-transparent hover:bg-[#651224]"
-                  >
-                    <div className="relative z-10 flex flex-1 flex-col space-y-4 text-[#1B1B1B] transition-colors duration-500 group-hover:text-white">
-                      {/* Icon */}
-                      <div className="flex h-12 w-12 items-center justify-center">
-                        <Image
-                          src={program.icon}
-                          alt={`${program.name} icon`}
-                          width={48}
-                          height={48}
-                          className="icon-filter transition-all duration-500"
-                        />
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-2xl font-semibold">{program.name}</h3>
-
-                      {/* Description */}
-                      <p className="flex-1 text-base leading-relaxed text-[#444C5C] group-hover:text-[#F6DCE3]">
-                        {program.description}
-                      </p>
-
-                      {/* Button */}
-                      <a
-                        href="#"
-                        className="mt-auto flex items-center gap-2 text-sm font-semibold text-[#641320] transition-colors duration-500 group-hover:text-white"
-                      >
-                        READ MORE
-                        <span className="transition-transform duration-300 group-hover:translate-x-1">
-                          →
-                        </span>
-                      </a>
-                    </div>
-                  </div>
+                    name={program.name}
+                    icon={program.icon}
+                    description={program.description}
+                  />
                 ))}
               </div>
             </AnimateOnScroll>
@@ -160,200 +136,98 @@ export default function ProgramsPage() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="bg-[#822333] py-24 text-white">
-          <div className="mx-auto flex w-full max-w-[1300px] flex-col gap-16 px-6">
+        <section className="bg-[#822333] py-12 sm:py-16 md:py-20 lg:py-24 text-white">
+          <div className="mx-auto flex w-full max-w-[1300px] flex-col gap-8 sm:gap-12 md:gap-16 px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="text-center">
-                <p className="text-[14px] font-semibold uppercase ">
+              <div className="text-center px-4">
+                <p className="text-xs sm:text-sm md:text-[14px] font-semibold uppercase">
                   WHAT OUR STUDENTS SAY?
                 </p>
-                <h2 className="mt-4 text-[48px] font-semibold leading-tight text-white">
+                <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-semibold leading-tight text-white break-words">
                   Top reviews provided by
-                  <br />
-                  our customers
+                  <br className="hidden sm:block" />
+                  <span className="sm:hidden"> </span>our customers
                 </h2>
               </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll>
-              <div className="grid gap-8 md:grid-cols-3">
+              <div className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {testimonials.map((testimonial, index) => (
-                  <div key={index} className="flex flex-col h-full">
-                    {/* Image/Video with Play Icon */}
-                    <div className="relative h-[265px] w-[410px] overflow-hidden bg-black mb-6">
-                      {playingVideoIndex === index ? (
-                        <iframe
-                          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-                          title="YouTube video player"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          className="absolute inset-0 h-full w-full"
-                        />
-                      ) : (
-                        <>
-                          <Image
-                            src={testimonial.image}
-                            alt={testimonial.altText}
-                            width={410}
-                            height={265}
-                            className="absolute inset-0 h-full w-full object-cover object-center"
-                          />
-                          {testimonial.showPlayIcon && (
-                            <button
-                              onClick={() => setPlayingVideoIndex(index)}
-                              className="absolute right-4 top-4 z-10 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-white transition-transform hover:scale-110"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                                className="h-6 w-6 text-[#822333]"
-                              >
-                                <path d="M8 5v14l11-7z" />
-                              </svg>
-                            </button>
-                          )}
-                        </>
-                      )}
-                    </div>
-
-                    {/* Quote - grow để chiếm không gian còn lại */}
-                    <p className="text-[16px] leading-relaxed font-semibold text-white mb-4 grow">
-                      &ldquo;{testimonial.quote}&rdquo;
-                    </p>
-
-                    {/* Program + Name với vertical line - luôn ở dưới cùng */}
-                    <div className="flex items-start gap-4">
-                      {/* Vertical line */}
-                      <div className="w-[1px] bg-white/40 h-[60px] shrink-0"></div>
-
-                      {/* Program + Name */}
-                      <div className="flex flex-col gap-2">
-                        <p className="text-[14px] font-semibold  text-white/80 leading-tight">
-                          {testimonial.program}
-                        </p>
-                        <p className="text-[16px] font-semibold text-white leading-tight">
-                          {testimonial.name}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <TestimonialCard
+                    key={index}
+                    image={testimonial.image}
+                    altText={testimonial.altText}
+                    quote={testimonial.quote}
+                    program={testimonial.program}
+                    name={testimonial.name}
+                    showPlayIcon={testimonial.showPlayIcon}
+                    videoId={videoId}
+                    isPlaying={playingVideoIndex === index}
+                    onPlayClick={() => setPlayingVideoIndex(index)}
+                  />
                 ))}
               </div>
             </AnimateOnScroll>
           </div>
         </section>
         {/* Hero Form Section */}
-        <section className="bg-white pt-24 pb-12">
-          <div className="mx-auto flex w-full max-w-[1300px] flex-col gap-12 px-6 lg:flex-row lg:items-start lg:gap-16">
+        <section className="bg-white pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-8 sm:pb-10 md:pb-12">
+          <div className="mx-auto flex w-full max-w-[1300px] flex-col gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 lg:flex-row lg:items-start lg:gap-12 xl:gap-16">
             {/* Left: Contact Form */}
-            <div className="flex w-full lg:w-1/2 shrink-0 flex-col gap-8">
+            <div className="flex w-full lg:w-1/2 shrink-0 flex-col gap-6 sm:gap-8">
               <AnimateOnScroll>
-                <div className="flex flex-col pt-[50px] gap-4">
-                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#1B1B1B] underline underline-offset-4">
+                <div className="flex flex-col pt-0 sm:pt-6 md:pt-[50px] gap-3 sm:gap-4">
+                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[#1B1B1B] underline underline-offset-2 sm:underline-offset-4">
                     GET IN TOUCH
                   </p>
-                  <h2 className="text-4xl my-[20px] font-semibold leading-tight text-[#1B1B1B]">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl my-3 sm:my-4 md:my-[20px] font-semibold leading-tight text-[#1B1B1B] break-words">
                     Tell us anything{" "}
                     <span className="text-[#822333]">here.</span>
                   </h2>
                 </div>
 
-                <form className="mt-5 relative flex flex-col gap-8 z-10">
-                  {/* Business email */}
-                  <div className="flex flex-1 items-center gap-3 border border-[#D9D9D9] px-5 py-3">
-                    <div className="h-6 w-6 text-[#B0384F] shrink-0">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="h-full w-full"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                        />
-                      </svg>
-                    </div>
-                    <input
-                      type="email"
-                      placeholder="Business email"
-                      className="flex-1 bg-transparent text-sm text-[#1B1B1B] outline-none placeholder:text-[#8C8C8C]"
-                    />
-                  </div>
+                <form className="mt-4 sm:mt-5 relative flex flex-col gap-4 sm:gap-6 md:gap-8 z-10">
+                  <FormInput
+                    type="email"
+                    placeholder="Business email"
+                    icon={<UserIcon />}
+                  />
 
-                  {/* info@ */}
-                  <div className="flex flex-1 items-center gap-3 border border-[#D9D9D9] px-5 py-3">
-                    <div className="h-6 w-6 text-[#B0384F] shrink-0">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="h-full w-full"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                        />
-                      </svg>
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="info@"
-                      className="flex-1 bg-transparent text-sm text-[#1B1B1B] outline-none placeholder:text-[#8C8C8C]"
-                    />
-                  </div>
+                  <FormInput
+                    type="text"
+                    placeholder="info@"
+                    icon={<EmailIcon />}
+                  />
 
-                  {/* Message */}
-                  <div className="flex flex-1 items-start gap-3 border border-[#D9D9D9] px-5 py-3 min-h-[120px]">
-                    <div className="h-6 w-6 text-[#B0384F] shrink-0 mt-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="h-full w-full"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
-                        />
-                      </svg>
-                    </div>
-                    <textarea
-                      placeholder="Message"
-                      rows={4}
-                      className="flex-1 resize-none bg-transparent text-sm text-[#1B1B1B] outline-none placeholder:text-[#8C8C8C]"
-                    />
-                  </div>
+                  <FormTextarea
+                    placeholder="Message"
+                    rows={4}
+                    icon={<PenIcon />}
+                  />
 
-                  <button
+                  <Button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-2 bg-[#822333] px-8 py-4 text-sm font-semibold uppercase tracking-[0.4em] text-white transition-colors hover:bg-[#9a2a3f]"
+                    variant="secondary"
+                    size="md"
+                    fullWidth
+                    className="sm:w-auto"
                   >
                     SUBMIT
-                  </button>
+                  </Button>
                 </form>
               </AnimateOnScroll>
             </div>
 
             {/* Right: Image */}
-            <div className="relative w-full lg:w-auto shrink-0">
+            <div className="relative w-full lg:w-auto shrink-0 flex justify-center lg:justify-start">
               <AnimateOnScroll>
-                <div className="relative h-[630px] w-[480px] bg-[#E5D2D7]">
+                <div className="relative h-[350px] w-full max-w-[300px] sm:h-[450px] sm:max-w-[380px] md:h-[550px] md:max-w-[450px] lg:h-[630px] lg:w-[480px] bg-[#E5D2D7] mx-auto lg:mx-0">
                   <Image
                     src="/gallery/gallery-1.jpg"
                     alt="Students talking with laptop in classroom"
-                    width={480}
-                    height={630}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 380px, (max-width: 1024px) 450px, 480px"
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
@@ -363,24 +237,26 @@ export default function ProgramsPage() {
         </section>
 
         {/* Subject Divider */}
-        <section className="bg-white py-12">
+        <section className="bg-white py-8 sm:py-10 md:py-12">
           <ContentMarquee
-            borderColorClass="border-b-[#641320] border-t-white "
-            itemClassName="flex items-center gap-8"
+            borderColorClass="border-b-[#641320] border-t-white"
+            itemClassName="flex items-center gap-4 sm:gap-6 md:gap-8"
           >
-            <span className="text-4xl font-bold text-[#641320]">Commerce</span>
+            <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#641320]">
+              Commerce
+            </span>
             <Image
               src="/icons/hat.svg"
               alt="Graduation cap"
-              width={24}
-              height={24}
-              className="text-[#C27C8A]"
+              width={20}
+              height={20}
+              className="w-5 h-5 sm:w-6 sm:h-6 md:w-6 md:h-6 text-[#C27C8A]"
             />
             <span
-              className="text-4xl font-bold"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold"
               style={{
                 color: "transparent",
-                WebkitTextStroke: "2px #C27C8A",
+                WebkitTextStroke: "1.5px #C27C8A",
               }}
             >
               Mathematics
@@ -388,15 +264,15 @@ export default function ProgramsPage() {
             <Image
               src="/icons/hat.svg"
               alt="Graduation cap"
-              width={24}
-              height={24}
-              className="text-[#C27C8A]"
+              width={20}
+              height={20}
+              className="w-5 h-5 sm:w-6 sm:h-6 md:w-6 md:h-6 text-[#C27C8A]"
             />
             <span
-              className="text-4xl font-bold"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold"
               style={{
                 color: "transparent",
-                WebkitTextStroke: "2px #C27C8A",
+                WebkitTextStroke: "1.5px #C27C8A",
               }}
             >
               Arts

@@ -26,12 +26,12 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-[#3C0B18] via-[#3C0B18]/80 to-[#3C0B18]/60" />
         </>
       )}
-      <div className="relative mx-auto flex w-full max-w-[1300px] flex-col gap-12 px-6">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div className="flex flex-col gap-5">
-            <span className="text-3xl font-semibold">Eduvet.</span>
+      <div className="relative mx-auto flex w-full max-w-[1300px] flex-col gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6">
+        <div className="grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <div className="flex flex-col gap-4 sm:gap-5">
+            <span className="text-2xl sm:text-3xl font-semibold">Eduvet.</span>
             <p
-              className={`text-base leading-relaxed ${
+              className={`text-sm sm:text-base leading-relaxed ${
                 isLight ? "text-[#4D4D4D]" : "text-white/80"
               }`}
             >
@@ -135,12 +135,12 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
           {footerColumns.map((column) => (
             <div
               key={column.heading}
-              className={`flex flex-col gap-4 text-[20px] ${
+              className={`flex flex-col gap-3 sm:gap-4 text-base sm:text-lg md:text-[20px] ${
                 isLight ? "text-[#4D4D4D]" : "text-white/75"
               }`}
             >
               <span
-                className={`text-[20px] font-semibold uppercase ${
+                className={`text-base sm:text-lg md:text-[20px] font-semibold uppercase ${
                   isLight ? "text-[#1B1B1B]" : "text-white"
                 }`}
               >
@@ -149,7 +149,7 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
               {column.items.map((item) => (
                 <span
                   key={item}
-                  className={`text-[16px] ${
+                  className={`text-sm sm:text-base md:text-[16px] ${
                     isLight ? "text-[#4D4D4D]" : "text-white/75"
                   }`}
                 >
@@ -187,12 +187,12 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
             </div>
           </div> */}
           <div
-            className={`flex flex-col gap-6 text-[14px] ${
+            className={`flex flex-col gap-4 sm:gap-5 md:gap-6 text-xs sm:text-sm md:text-[14px] ${
               isLight ? "text-[#4D4D4D]" : "text-white/75"
             }`}
           >
             <span
-              className={`text-[20px] uppercase font-semibold ${
+              className={`text-base sm:text-lg md:text-[20px] uppercase font-semibold ${
                 isLight ? "text-[#1B1B1B]" : "text-white"
               }`}
             >
@@ -316,18 +316,20 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
         <div
           className={`border-t ${
             isLight ? "border-[#1B1B1B]/20" : "border-white/20"
-          } pt-6 flex items-center justify-between`}
+          } pt-4 sm:pt-5 md:pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6`}
         >
           <div className="flex items-center gap-2">
             <Image
               src="/icons/hat.svg"
               alt="Eduvet logo"
-              width={24}
-              height={24}
-              className={isLight ? "" : "brightness-0 invert"}
+              width={20}
+              height={20}
+              className={`w-5 h-5 sm:w-6 sm:h-6 ${
+                isLight ? "" : "brightness-0 invert"
+              }`}
             />
             <span
-              className={`text-xl font-semibold ${
+              className={`text-lg sm:text-xl font-semibold ${
                 isLight ? "text-[#1B1B1B]" : "text-white"
               }`}
             >
@@ -335,7 +337,7 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
             </span>
           </div>
           <div
-            className={`text-[14px] uppercase font-semibold ${
+            className={`text-xs sm:text-sm md:text-[14px] uppercase font-semibold text-center sm:text-right ${
               isLight ? "text-[#4D4D4D]" : "text-white/70"
             }`}
           >
