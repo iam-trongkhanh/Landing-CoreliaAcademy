@@ -100,7 +100,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Breadcrumb Schema */}
+
       <Script
         id="breadcrumb-schema"
         type="application/ld+json"
@@ -108,7 +108,7 @@ export default function Home() {
           __html: JSON.stringify(breadcrumbSchema),
         }}
       />
-      {/* FAQ Schema */}
+
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -124,7 +124,7 @@ export default function Home() {
           <section className="bg-[#FDFDFD] py-12 sm:py-16 md:py-20 lg:py-24">
             <AnimateOnScroll>
               <div className="mx-auto flex w-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:h-auto max-w-[1300px] flex-col-reverse gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 lg:flex-row lg:items-center lg:gap-16">
-                {/* Phần ảnh bên trái */}
+
                 <div className="relative flex flex-[1.2] justify-center lg:justify-start w-full">
                   <div className="relative h-[300px] w-[240px] sm:h-[400px] sm:w-[320px] md:h-[450px] md:w-[360px] lg:h-[500px] lg:w-[390px] max-w-full mx-auto lg:mx-0">
                     <div className="absolute inset-0 bg-white shadow-[0px_30px_80px_rgba(111,23,41,0.12)] rounded-sm">
@@ -151,7 +151,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Phần text bên phải */}
+
                 <div className="flex flex-[0.8] flex-col justify-center gap-4 sm:gap-6 md:gap-8 text-center lg:text-left">
                   <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-[#1B1B1B] break-words">
                     Message from the main{" "}
@@ -385,7 +385,7 @@ export default function Home() {
                         {fact.label}
                       </p>
 
-                      {/* Số rỗng bên trong, viền */}
+
                       <p
                         className="text-3xl sm:text-4xl md:text-5xl font-semibold"
                         style={{
@@ -406,7 +406,7 @@ export default function Home() {
             <AnimateOnScroll>
               <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6">
                 <div className="relative z-20 overflow-hidden bg-white shadow-[0px_45px_120px_rgba(0,0,0,0.25)] lg:grid lg:grid-cols-[460px_1fr]">
-                  {/* Chỉ giảm width/height ảnh */}
+
                   <div className="relative flex justify-center items-center h-[250px] sm:h-[300px] md:h-[350px] lg:h-full">
                     <div className="relative h-full w-full max-w-[420px] lg:h-[415px] lg:w-[440px]">
                       <Image

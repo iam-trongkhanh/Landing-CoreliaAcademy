@@ -39,16 +39,7 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
               campus in NYC, which provides a support system that aids students
               in becoming confident and self-reliant.
             </p>
-            {/* <div className="flex gap-3 text-white/70">
-              {["🌐", "📘", "📸", "▶️"].map((icon) => (
-                <span
-                  key={icon}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30"
-                >
-                  {icon}
-                </span>
-              ))}
-            </div> */}
+
             <div
               className={`flex gap-3 ${
                 isLight ? "text-[#4D4D4D]" : "text-white/70"
@@ -119,19 +110,7 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
               </span>
             </div>
           </div>
-          {/* {footerColumns.map((column) => (
-            <div
-              key={column.heading}
-              className="flex flex-col gap-4 text-base uppercase tracking-[0.35em] text-white/75"
-            >
-              <span className="text-lg font-semibold tracking-[0.4em] text-white">
-                {column.heading}
-              </span>
-              {column.items.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-          ))} */}
+
           {footerColumns.map((column) => (
             <div
               key={column.heading}
@@ -159,33 +138,6 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
             </div>
           ))}
 
-          {/* <div className="flex flex-col gap-4 text-[14px] text-white/75">
-            <span className="text-[20px] uppercase font-semibold  text-white">
-              Get in touch.
-            </span>
-            <div>
-              <p className="text-[14px] text-white/60">Phone Number</p>
-              <p className="text-[16px] font-semibold text-white">
-                +1 (123) 456 789 00
-              </p>
-            </div>
-            <hr className=" border-white/30" />
-
-            <div>
-              <p className="text-[14px] text-white/60">Email address</p>
-              <p className="text-[16px] font-semibold text-white">
-                info@eduvet.com
-              </p>
-            </div>
-            <hr className=" border-white/30" />
-
-            <div>
-              <p className="text-[14px] text-white/60">Address</p>
-              <p className="text-[16px] font-semibold text-white">
-                12/A, New Booston Tower, NYC
-              </p>
-            </div>
-          </div> */}
           <div
             className={`flex flex-col gap-4 sm:gap-5 md:gap-6 text-xs sm:text-sm md:text-[14px] ${
               isLight ? "text-[#4D4D4D]" : "text-white/75"

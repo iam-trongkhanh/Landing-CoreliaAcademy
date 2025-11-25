@@ -115,7 +115,8 @@ npm install -g netlify-cli
 
 ```bash
 # Login
-netlify login
+
+
 
 # Mở browser và đăng nhập
 ```

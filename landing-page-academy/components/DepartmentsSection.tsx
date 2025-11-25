@@ -27,7 +27,7 @@ export function DepartmentsSection({
     >
       <AnimateOnScroll>
         <SectionHeading eyebrow={eyebrow} title={title} />
-        <div className="flex flex-col gap-4 sm:gap-5 md:gap-6">
+        <div className="flex flex-col gap-4 sm:gap-5 mt-15 md:gap-6">
           {departments.map((dept, index) => (
             <div
               key={dept.title}
@@ -43,7 +43,6 @@ export function DepartmentsSection({
                 />
               </div>
               <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 md:py-10 lg:py-12 text-[#1B1B1B] transition-colors duration-500 group-hover:text-white">
-                {/* Số thứ tự rỗng bên trong */}
                 <div
                   className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.2em] group-hover:text-[#F6C9D5] shrink-0"
                   style={{

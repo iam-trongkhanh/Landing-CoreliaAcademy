@@ -161,7 +161,6 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Breadcrumb Schema */}
       <Script
         id="breadcrumb-schema-about"
         type="application/ld+json"
@@ -255,7 +254,6 @@ export default function AboutPage() {
             />
           </section>
 
-          {/* University Highlights Section */}
           <section className="bg-[#FDF8FA] py-12 sm:py-16 md:py-20 lg:py-24">
             <div className="mx-auto flex w-full flex-col gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6">
               <AnimateOnScroll>
@@ -273,7 +271,10 @@ export default function AboutPage() {
                   </h2>
                 </div>
               </AnimateOnScroll>
-              <div className="relative w-full overflow-x-auto overflow-y-visible -mx-4 sm:mx-0 px-4 sm:px-0">
+              <div
+                className="relative w-full overflow-x-auto overflow-y-visible -mx-4 sm:mx-0 px-4 sm:px-0 carousel-container"
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              >
                 <div
                   className="w-full mx-auto"
                   style={{
@@ -330,7 +331,8 @@ export default function AboutPage() {
                     ))}
                   </div>
                 </div>
-                <div className="flex justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
+                {/* Ẩn progress bar - chỉ hiển thị nút điều hướng trên desktop, ẩn trên mobile */}
+                <div className="hidden md:flex justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 carousel-navigation">
                   <button
                     onClick={handlePrevious}
                     className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[#641320] text-white text-lg sm:text-xl transition-colors hover:bg-[#7A1D32] active:scale-95"
