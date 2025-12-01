@@ -1,0 +1,91 @@
+---
+import "../styles/global.css";
+import { generateOrganizationSchema, siteConfig } from "../lib/seo";
+
+interface Props {
+  title?: string;
+  description?: string;
+  path?: string;
+  keywords?: string[];
+  image?: string;
+}
+
+const {
+  title = siteConfig.title,
+  description = siteConfig.description,
+  path = "",
+  keywords = [],
+  image,
+} = Astro.props;
+
+const pageTitle = title.includes("|") ? title : `${title} | ${siteConfig.name}`;
+const pageDescription = description;
+const pageUrl = `${siteConfig.url}${path}`;
+const pageImage = image
+  ? `${siteConfig.url}${image}`
+  : `${siteConfig.url}${siteConfig.ogImage}`;
+const allKeywords = [...siteConfig.keywords, ...keywords].join(", ");
+
+const organizationSchema = generateOrganizationSchema();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://www.youtube.com" />
+    
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Meta Tags -->
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={allKeywords} />
+    <meta name="author" content={siteConfig.name} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={pageImage} />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={pageImage} />
+    <meta name="twitter:creator" content={siteConfig.twitterHandle} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={pageUrl} />
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
+  </head>
+  <body class="antialiased" style="font-family: 'Inter', Arial, Helvetica, sans-serif;">
+    <slot />
+  </body>
+</html>
+

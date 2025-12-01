@@ -1,10 +1,6 @@
 [build]
   command = "npm run build"
-  # Không cần set publish directory khi dùng @netlify/plugin-nextjs
-  # Plugin sẽ tự động xử lý build output
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
@@ -76,16 +72,6 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/_next/image*"
+  for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/_next/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# KHÔNG cần redirect rule cho Next.js
-# @netlify/plugin-nextjs sẽ tự động xử lý routing và static assets (CSS, JS, images)
-# Redirect rule "/*" -> "/index.html" chỉ dành cho static sites, sẽ phá vỡ CSS/JS của Next.js
-
