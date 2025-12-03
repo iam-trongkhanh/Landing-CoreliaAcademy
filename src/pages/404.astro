@@ -32,40 +32,13 @@ import { Button } from "../components/ui/Button";
           style="background-image: url('/video/campus.jpg'); mix-blend-mode: luminosity; opacity: 0.15;"
         ></div>
         
-        <!-- Large 404 watermark with gradient fade -->
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div class="relative">
-            <!-- Outer stroke -->
-            <h1 
-              class="font-bold absolute inset-0" 
-              style="
-                font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
-                font-size: 25vw; 
-                line-height: 1; 
-                color: transparent;
-                -webkit-text-stroke: 3px rgba(255, 255, 255, 0.1);
-                mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%); 
-                -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
-              "
-            >
-              404
-            </h1>
-            <!-- Inner stroke -->
-            <h1 
-              class="font-bold relative" 
-              style="
-                font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
-                font-size: 25vw; 
-                line-height: 1; 
-                color: transparent;
-                -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.15);
-                mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%); 
-                -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
-              "
-            >
-              404
-            </h1>
-          </div>
+        <!-- Large 404 illustration -->
+        <div class="absolute  top-[180px] left-0 right-0  flex items-center justify-center pointer-events-none">
+          <img
+            src="/images/404.svg"
+            alt="404 - Page not found"
+            class="w-[70vw] max-w-[560px] h-auto"
+          />
         </div>
         
         <!-- Content -->
@@ -79,7 +52,7 @@ import { Button } from "../components/ui/Button";
             size="md"
             href="/"
             showArrow
-            className="back-to-home-btn !bg-white !text-gray-900 !border-white hover:!bg-gray-100 hover:!border-gray-100 hover:!text-gray-900"
+            className="back-to-home-btn mt-[40px] !bg-white !text-gray-900 !border-white hover:!bg-gray-100 hover:!border-gray-100 hover:!text-gray-900"
           >
             BACK TO HOME
           </Button>
