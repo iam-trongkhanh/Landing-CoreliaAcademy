@@ -7,8 +7,8 @@ export function SiteHeader() {
 
   return (
     <header className="border-b border-[#E3D5DA] bg-white">
-      {/* Top bar */}
-      <div className="bg-[#4A0F1F] text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.15em] text-white">
+      {/* Top bar – only show on desktop (>= 1280px) */}
+      <div className="hidden xl:block bg-[#4A0F1F] text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.15em] text-white">
         <div className="mx-auto flex w-full max-w-[1300px] flex-col gap-2 sm:flex-row items-center justify-between px-4 sm:px-6 py-2 sm:py-3">
           <span className="text-center sm:text-left">
             Welcome to our Eduvet University
@@ -33,8 +33,8 @@ export function SiteHeader() {
           </h1>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-6 lg:gap-8 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.2em] text-[#1B1B1B] md:flex">
+        {/* Desktop Navigation – only on very large screens (>= 1280px) */}
+        <nav className="hidden items-center gap-6 lg:gap-8 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.2em] text-[#1B1B1B] xl:flex">
           {navigation.map((item) =>
             item === "Pages" ? (
               <div key={item} className="relative group">
@@ -128,10 +128,10 @@ export function SiteHeader() {
           )}
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button – shown on widths < 1280px */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="xl:hidden flex flex-col gap-1.5 p-2"
           aria-label="Toggle menu"
         >
           <span
@@ -151,8 +151,8 @@ export function SiteHeader() {
           />
         </button>
 
-        {/* Desktop Apply Button */}
-        <div className="hidden md:flex items-center gap-4 text-[#1B1B1B]">
+        {/* Desktop Apply Button – only show on >= 1280px */}
+        <div className="hidden xl:flex items-center gap-4 text-[#1B1B1B]">
           <Button
             variant="outline"
             size="md"
@@ -165,9 +165,9 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu – shown on widths < 1280px */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-[#E3D5DA] bg-white">
+        <div className="xl:hidden border-t border-[#E3D5DA] bg-white">
           <nav className="mx-auto flex w-full max-w-[1300px] flex-col px-4 py-4">
             {navigation.map((item) => (
               <a

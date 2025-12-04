@@ -165,7 +165,19 @@ const courseSchema = {
 
       <section class="bg-white pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-8 sm:pb-10 md:pb-12">
         <div class="mx-auto flex w-full max-w-[1300px] flex-col gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 lg:flex-row-reverse lg:items-start lg:gap-12 xl:gap-16">
-          <div class="flex w-full lg:w-1/2 shrink-0 flex-col gap-6 sm:gap-8">
+          <div class="relative w-full lg:w-auto shrink-0 flex justify-center lg:justify-start order-1 lg:order-2">
+            <AnimateOnScroll client:visible>
+              <div class="relative h-[350px] w-full max-w-[300px] sm:h-[450px] sm:max-w-[380px] md:h-[550px] md:max-w-[450px] lg:h-[630px] lg:w-[480px] bg-[#E5D2D7] mx-auto lg:mx-0">
+                <img
+                  src="/gallery/gallery-1.jpg"
+                  alt="Students talking with laptop in classroom"
+                  class="h-full w-full object-cover object-center"
+                />
+              </div>
+            </AnimateOnScroll>
+          </div>
+
+          <div class="flex w-full lg:w-1/2 shrink-0 flex-col gap-6 sm:gap-8 order-2 lg:order-1">
             <AnimateOnScroll client:visible>
               <div class="flex flex-col pt-0 sm:pt-6 md:pt-[50px] gap-3 sm:gap-4">
                 <p class="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.15em] text-[#1B1B1B] underline underline-offset-2 sm:underline-offset-4">
@@ -206,18 +218,6 @@ const courseSchema = {
                   SUBMIT
                 </Button>
               </form>
-            </AnimateOnScroll>
-          </div>
-
-          <div class="relative w-full lg:w-auto shrink-0 flex justify-center lg:justify-start">
-            <AnimateOnScroll client:visible>
-              <div class="relative h-[350px] w-full max-w-[300px] sm:h-[450px] sm:max-w-[380px] md:h-[550px] md:max-w-[450px] lg:h-[630px] lg:w-[480px] bg-[#E5D2D7] mx-auto lg:mx-0">
-                <img
-                  src="/gallery/gallery-1.jpg"
-                  alt="Students talking with laptop in classroom"
-                  class="h-full w-full object-cover object-center"
-                />
-              </div>
             </AnimateOnScroll>
           </div>
         </div>

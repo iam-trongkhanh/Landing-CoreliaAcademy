@@ -19,7 +19,7 @@ export function VideoShowcase() {
         alt="Campus overview"
         className="object-cover object-center opacity-70 h-full w-full absolute inset-0"
       />
-      <div className="relative z-10 flex h-full w-full items-center justify-center">
+      <div className="relative z-10 flex h-full min-h-[400px] sm:min-h-[600px] md:min-h-[800px] w-full items-center justify-center">
         <AnimateFadeIn>
           <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 text-white px-4">
             <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.4em] sm:tracking-[0.5em] text-white/80">
@@ -27,10 +27,17 @@ export function VideoShowcase() {
             </p>
             <button
               onClick={() => setOpen(true)}
-              className="flex h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-white text-black text-lg sm:text-xl md:text-2xl shadow-[0px_15px_40px_rgba(0,0,0,0.35)] transition-transform hover:scale-105 active:scale-95"
+              className="flex h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-white text-black shadow-[0px_15px_40px_rgba(0,0,0,0.35)] transition-transform hover:scale-105 active:scale-95 relative z-20"
               aria-label="Play campus video"
             >
-              ▶
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </button>
           </div>
         </AnimateFadeIn>
@@ -65,4 +72,3 @@ export function VideoShowcase() {
     </section>
   );
 }
-
