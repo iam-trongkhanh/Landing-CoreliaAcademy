@@ -125,8 +125,10 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
               {column.items.map((item) => (
                 <span
                   key={item}
-                  className={`text-sm sm:text-base md:text-[16px] ${
-                    isLight ? "text-[#4D4D4D]" : "text-white/75"
+                  className={`text-base text-sm sm:text-base md:text-[16px] cursor-pointer transition-colors duration-200 ${
+                    isLight
+                      ? "text-[#4D4D4D] hover:text-[#1B1B1B]"
+                      : "text-white/75 hover:text-[#1B1B1B]"
                   }`}
                 >
                   {item}

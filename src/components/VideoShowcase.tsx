@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimateFadeIn } from "./AnimateFadeIn";
 import { PlayButton } from "./ui/PlayButton";
 
 export function VideoShowcase() {
   const [open, setOpen] = useState(false);
+
+  // Prevent background scroll when video overlay is open
+  useEffect(() => {
+    if (open) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [open]);
 
   return (
     <section className="relative isolate min-h-[400px] sm:min-h-[600px] md:min-h-[800px] lg:h-[1000px] xl:h-[1200px] w-full bg-black overflow-x-hidden">

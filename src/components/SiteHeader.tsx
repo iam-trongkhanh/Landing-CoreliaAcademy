@@ -6,7 +6,7 @@ export function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="border-b border-[#E3D5DA] bg-white sticky-header">
+    <header className="border-b border-[#E3D5DA] bg-white sticky-header relative">
       {/* Top bar – only show on desktop (>= 1280px) */}
       <div className="hidden xl:block bg-[#4A0F1F] text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.15em] text-white">
         <div className="app-container flex w-full flex-col gap-2 sm:flex-row items-center justify-between py-2 sm:py-3">
@@ -165,10 +165,10 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile Menu – shown on widths < 1280px */}
+      {/* Mobile Menu – shown on widths < 1280px (overlay, not pushing content) */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden border-t border-[#E3D5DA] bg-white">
-          <nav className="app-container flex w-full flex-col py-4">
+        <div className="xl:hidden absolute inset-x-0 top-full z-50 border-t border-[#E3D5DA] bg-white shadow-lg">
+          <nav className="app-container flex w-full flex-col py-4 max-h-[calc(100vh-120px)] overflow-y-auto">
             {navigation.map((item) => (
               <a
                 key={item}
