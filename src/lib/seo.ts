@@ -93,12 +93,7 @@ export function generateMetadata({
         "max-snippet": -1,
       },
     },
-    verification: {
-      // Add your verification codes here
-      // google: "your-google-verification-code",
-      // yandex: "your-yandex-verification-code",
-      // bing: "your-bing-verification-code",
-    },
+    verification: {},
   };
 }
 
@@ -125,13 +120,7 @@ export function generateOrganizationSchema() {
       areaServed: "US",
       availableLanguage: "English",
     },
-    sameAs: [
-      // Add your social media links
-      // "https://www.facebook.com/eduvet",
-      // "https://www.twitter.com/eduvet",
-      // "https://www.instagram.com/eduvet",
-      // "https://www.youtube.com/eduvet",
-    ],
+    sameAs: [],
     foundingDate: "1990",
     numberOfStudents: "7000+",
   };

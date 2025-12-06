@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { PlayButton } from "../ui/PlayButton";
 
 type TestimonialCardProps = {

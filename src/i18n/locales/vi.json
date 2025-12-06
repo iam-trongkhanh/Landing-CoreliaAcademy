@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "campus": "Cơ sở",
+    "programs": "Chương trình",
+    "pages": "Trang",
+    "events": "Sự kiện"
+  },
+  "hero": {
+    "title": "Chào mừng đến với Corelia Academy",
+    "subtitle": "Khám phá tương lai cùng chúng tôi",
+    "cta": {
+      "apply": "Đăng ký ngay",
+      "learnMore": "Tìm hiểu thêm"
+    }
+  },
+  "departments": {
+    "eyebrow": "khoa",
+    "title": "Chuyên môn học thuật",
+    "items": {
+      "psychology": {
+        "title": "Tâm lý học",
+        "description": "Chúng tôi tập trung tạo ra kiến thức mới & thúc đẩy sự hiểu biết trong mọi tình huống."
+      },
+      "sociology": {
+        "title": "Xã hội học",
+        "description": "Chúng tôi tập trung tạo ra kiến thức mới trong các tình huống xã hội đa dạng."
+      },
+      "politicalScience": {
+        "title": "Khoa học chính trị",
+        "description": "Chúng tôi tập trung tạo ra kiến thức mới về các tình huống chính trị đa dạng."
+      },
+      "anthropology": {
+        "title": "Nhân chủng học",
+        "description": "Chúng tôi tập trung tạo ra sự hiểu biết trong nhiều bối cảnh xã hội."
+      },
+      "economics": {
+        "title": "Kinh tế học",
+        "description": "Chúng tôi tập trung cải thiện hiểu biết về các bối cảnh và vấn đề kinh tế đa dạng."
+      },
+      "geography": {
+        "title": "Địa lý học",
+        "description": "Chúng tôi tập trung cải thiện hiểu biết về các bối cảnh và vấn đề địa lý đa dạng."
+      }
+    }
+  },
+  "footer": {
+    "essential": {
+      "heading": "Thiết yếu.",
+      "items": {
+        "about": "Về chúng tôi",
+        "teachers": "Giảng viên",
+        "whatWeDo": "Chúng tôi làm gì",
+        "contact": "Liên hệ",
+        "faq": "Câu hỏi thường gặp",
+        "blogs": "Tin tức",
+        "events": "Sự kiện",
+        "subjects": "Môn học"
+      }
+    },
+    "programs": {
+      "heading": "Chương trình.",
+      "items": {
+        "psychology": "Tâm lý học",
+        "sociology": "Xã hội học",
+        "politicalScience": "Khoa học chính trị",
+        "anthropology": "Nhân chủng học",
+        "economics": "Kinh tế học",
+        "geography": "Địa lý học"
+      }
+    }
+  },
+  "common": {
+    "readMore": "Đọc thêm",
+    "subscribe": "Đăng ký",
+    "email": "Email",
+    "businessEmail": "Email doanh nghiệp",
+    "loading": "Đang tải...",
+    "error": "Đã có lỗi xảy ra"
+  }
+}

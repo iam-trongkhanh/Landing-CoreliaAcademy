@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "campus": "Campus",
+    "programs": "Programs",
+    "pages": "Pages",
+    "events": "Events"
+  },
+  "hero": {
+    "title": "Welcome to Corelia Academy",
+    "subtitle": "Discover your future with us",
+    "cta": {
+      "apply": "Apply Now",
+      "learnMore": "Learn More"
+    }
+  },
+  "departments": {
+    "eyebrow": "departments",
+    "title": "Academies Expertise",
+    "items": {
+      "psychology": {
+        "title": "Psychology",
+        "description": "We have focused generating new knowledge & promoting understanding in any kind of situations."
+      },
+      "sociology": {
+        "title": "Sociology",
+        "description": "We have concentrated on generating new knowledge across diverse social situations."
+      },
+      "politicalScience": {
+        "title": "Political Science",
+        "description": "We have focused on generating new knowledge understanding in a variety of political situations."
+      },
+      "anthropology": {
+        "title": "Anthropology",
+        "description": "We have concentrated on generating understanding in a wide range of social contexts."
+      },
+      "economics": {
+        "title": "Economics",
+        "description": "We have focused on improving understanding across diverse economic contexts and issues."
+      },
+      "geography": {
+        "title": "Geography",
+        "description": "We have focused on improving understanding across diverse geographic contexts and issues."
+      }
+    }
+  },
+  "footer": {
+    "essential": {
+      "heading": "Essential.",
+      "items": {
+        "about": "About Us",
+        "teachers": "Our Teachers",
+        "whatWeDo": "What We Do",
+        "contact": "Contact Us",
+        "faq": "FAQ",
+        "blogs": "Blogs",
+        "events": "Events",
+        "subjects": "Subjects"
+      }
+    },
+    "programs": {
+      "heading": "Programs.",
+      "items": {
+        "psychology": "Psychology",
+        "sociology": "Sociology",
+        "politicalScience": "Political Science",
+        "anthropology": "Anthropology",
+        "economics": "Economics",
+        "geography": "Geography"
+      }
+    }
+  },
+  "common": {
+    "readMore": "Read More",
+    "subscribe": "Subscribe",
+    "email": "Email",
+    "businessEmail": "Business email",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  }
+}

@@ -24,37 +24,37 @@ export const departments = [
     title: "Psychology",
     description:
       "We have focused generating new knowledge & promoting understanding in any kind of situations.",
-    image: "/gallery/gallery-1.jpg",
+    image: "/gallery/gallery-1.webp",
   },
   {
     title: "Sociology",
     description:
       "We have concentrated on generating new knowledge across diverse social situations.",
-    image: "/gallery/gallery-2.jpg",
+    image: "/gallery/gallery-2.webp",
   },
   {
     title: "Political Science",
     description:
       "We have focused on generating new knowledge understanding in a variety of political situations.",
-    image: "/gallery/gallery-3.jpg",
+    image: "/gallery/gallery-3.webp",
   },
   {
     title: "Anthropology",
     description:
       "We have concentrated on generating understanding in a wide range of social contexts.",
-    image: "/gallery/gallery-4.jpg",
+    image: "/gallery/gallery-4.webp",
   },
   {
     title: "Economics",
     description:
       "We have focused on improving understanding across diverse economic contexts and issues.",
-    image: "/gallery/gallery-5.jpg",
+    image: "/gallery/gallery-5.webp",
   },
   {
     title: "Geography",
     description:
       "We have focused on improving understanding across diverse geographic contexts and issues.",
-    image: "/gallery/gallery-6.jpg",
+    image: "/gallery/gallery-6.webp",
   },
 ];
 

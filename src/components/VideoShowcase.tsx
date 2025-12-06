@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimateFadeIn } from "./AnimateFadeIn";
+import { AnimateOnScroll } from "./AnimateOnScroll";
 import { PlayButton } from "./ui/PlayButton";
 
 export function VideoShowcase() {
@@ -32,7 +32,7 @@ export function VideoShowcase() {
         className="object-cover object-center opacity-70 h-full w-full absolute inset-0"
       />
       <div className="relative z-10 flex h-full min-h-[400px] sm:min-h-[600px] md:min-h-[800px] w-full items-center justify-center">
-        <AnimateFadeIn>
+        <AnimateOnScroll animation="fadeIn">
           <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 text-white px-4">
             <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.4em] sm:tracking-[0.5em] text-white/80">
               Campus overview
@@ -42,7 +42,7 @@ export function VideoShowcase() {
               ariaLabel="Play campus video"
             />
           </div>
-        </AnimateFadeIn>
+        </AnimateOnScroll>
       </div>
 
       {open && (

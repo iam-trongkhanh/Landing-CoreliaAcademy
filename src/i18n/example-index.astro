@@ -1,0 +1,92 @@
+---
+// Example: How to update src/pages/index.astro for i18n
+
+import Layout from "../layouts/Layout.astro";
+import { SiteHeader } from "../components/SiteHeader";
+import { Hero } from "../components/Hero";
+import { DepartmentsSection } from "../components/DepartmentsSection";
+import { SiteFooter } from "../components/SiteFooter";
+import { LanguageSwitcher } from "../components/LanguageSwitcher";
+
+// Import i18n utilities
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+// Get current language from URL
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Get localized content
+const departments = [
+  {
+    title: t('departments.items.psychology.title'),
+    description: t('departments.items.psychology.description'),
+    image: "/gallery/gallery-1.webp",
+  },
+  {
+    title: t('departments.items.sociology.title'),
+    description: t('departments.items.sociology.description'),
+    image: "/gallery/gallery-2.webp",
+  },
+  {
+    title: t('departments.items.politicalScience.title'),
+    description: t('departments.items.politicalScience.description'),
+    image: "/gallery/gallery-3.webp",
+  },
+  {
+    title: t('departments.items.anthropology.title'),
+    description: t('departments.items.anthropology.description'),
+    image: "/gallery/gallery-4.webp",
+  },
+  {
+    title: t('departments.items.economics.title'),
+    description: t('departments.items.economics.description'),
+    image: "/gallery/gallery-5.webp",
+  },
+  {
+    title: t('departments.items.geography.title'),
+    description: t('departments.items.geography.description'),
+    image: "/gallery/gallery-6.webp",
+  },
+];
+
+// Page metadata with translations
+const pageTitle = lang === 'vi'
+  ? 'Corelia Academy - Đại học Khoa học Xã hội'
+  : 'Corelia Academy - Social Science University';
+
+const pageDescription = lang === 'vi'
+  ? 'Khám phá các chương trình học tập hàng đầu tại Corelia Academy'
+  : 'Explore top academic programs at Corelia Academy';
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  path={lang === 'vi' ? '/' : '/en'}
+>
+  <!-- Language Switcher in Header -->
+  <SiteHeader client:load>
+    <LanguageSwitcher
+      currentLang={lang}
+      currentPath={Astro.url.pathname}
+      client:load
+      slot="language-switcher"
+    />
+  </SiteHeader>
+
+  <main>
+    <!-- Hero Section with translated content -->
+    <Hero client:load />
+
+    <!-- Departments Section -->
+    <DepartmentsSection
+      departments={departments}
+      eyebrow={t('departments.eyebrow')}
+      title={t('departments.title')}
+      client:load
+    />
+
+    <!-- Footer with translated links -->
+    <SiteFooter />
+  </main>
+</Layout>

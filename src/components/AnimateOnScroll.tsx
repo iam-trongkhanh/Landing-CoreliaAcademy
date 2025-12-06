@@ -1,13 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 
+type AnimationType = "fadeIn" | "fadeInUp";
+
 type AnimateOnScrollProps = {
   children: React.ReactNode;
   className?: string;
+  animation?: AnimationType;
+};
+
+const animationClassMap: Record<AnimationType, string> = {
+  fadeIn: "animate__fadeIn",
+  fadeInUp: "animate__fadeInUp",
 };
 
 export function AnimateOnScroll({
   children,
   className = "",
+  animation = "fadeInUp",
 }: AnimateOnScrollProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -60,7 +69,7 @@ export function AnimateOnScroll({
     <div
       ref={ref}
       className={`${
-        isVisible ? "animate__animated animate__fadeInUp" : "opacity-0"
+        isVisible ? `animate__animated ${animationClassMap[animation]}` : "opacity-0"
       } ${className}`}
     >
       {children}

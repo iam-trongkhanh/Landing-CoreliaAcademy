@@ -1,5 +1,3 @@
-import type { ImageMetadata } from "astro";
-
 type LogoItem = {
   name: string;
   src: string;

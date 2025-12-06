@@ -1,5 +1,6 @@
 # build output
 dist/
+
 # generated types
 .astro/
 
@@ -11,21 +12,22 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+*.log
+build-output.txt
 
 # environment variables
 .env
-.env.production
+.env.*
+!.env.example
 
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# IDE/Editor
 .idea/
-
-# Next.js (old - can be removed)
-/.next/
-/out/
-next-env.d.ts
+.vscode/
+*.swp
+*.swo
 
 # misc
 *.pem
@@ -40,4 +42,6 @@ next-env.d.ts
 # testing
 /coverage
 
-*.md
+# Claude Code
+.claude/
+CLAUDE.md
