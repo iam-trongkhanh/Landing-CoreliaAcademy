@@ -61,14 +61,17 @@ export function VideoShowcase() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute right-2 top-2 sm:right-4 sm:top-4 rounded-full bg-white/90 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-black hover:bg-white transition-colors"
-              aria-label="Close video"
-            >
-              ✕
-            </button>
           </div>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setOpen(false);
+            }}
+            className="absolute right-4 top-4 sm:right-6 sm:top-6 md:right-8 md:top-8 rounded-full bg-white/90 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-black hover:bg-white transition-colors cursor-pointer"
+            aria-label="Close video"
+          >
+            ✕
+          </button>
         </div>
       )}
     </section>

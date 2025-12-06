@@ -30,7 +30,7 @@ export function DepartmentsSection({
           {departments.map((dept, index) => (
             <div
               key={dept.title}
-              className="group relative overflow-hidden border border-[#E0B9C1] bg-white transition-colors duration-500 hover:border-transparent hover:bg-[#651224]"
+              className="group relative overflow-hidden border border-[#E0B9C1] bg-white transition-colors duration-500 hover:border-transparent hover:bg-[#651224] cursor-pointer"
             >
               <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-70">
                 <img
@@ -58,7 +58,7 @@ export function DepartmentsSection({
                     {dept.description}
                   </p>
                 </div>
-                <button className="flex h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 items-center justify-center rounded-full border border-[#C27C8A] text-lg sm:text-xl md:text-2xl text-[#C27C8A] transition-colors duration-500 group-hover:border-white group-hover:text-white shrink-0 self-start sm:self-center">
+                <button className="flex h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 items-center justify-center rounded-full border border-[#C27C8A] text-lg sm:text-xl md:text-2xl text-[#C27C8A] transition-colors duration-500 group-hover:border-white group-hover:text-white shrink-0 self-start sm:self-center cursor-pointer">
                   ↗
                 </button>
               </div>

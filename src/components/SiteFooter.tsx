@@ -44,7 +44,7 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
             >
               {/* Facebook */}
               <span
-                className={`flex h-10 w-10 items-center justify-center rounded-full border ${
+                className={`flex h-10 w-10 items-center justify-center rounded-full border cursor-pointer ${
                   isLight ? "border-[#1B1B1B]/30" : "border-white/30"
                 }`}
               >
@@ -60,7 +60,7 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
 
               {/* X / Twitter */}
               <span
-                className={`flex h-10 w-10 items-center justify-center rounded-full border ${
+                className={`flex h-10 w-10 items-center justify-center rounded-full border cursor-pointer ${
                   isLight ? "border-[#1B1B1B]/30" : "border-white/30"
                 }`}
               >
@@ -76,7 +76,7 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
 
               {/* Instagram */}
               <span
-                className={`flex h-10 w-10 items-center justify-center rounded-full border ${
+                className={`flex h-10 w-10 items-center justify-center rounded-full border cursor-pointer ${
                   isLight ? "border-[#1B1B1B]/30" : "border-white/30"
                 }`}
               >
@@ -92,7 +92,7 @@ export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
 
               {/* YouTube */}
               <span
-                className={`flex h-10 w-10 items-center justify-center rounded-full border ${
+                className={`flex h-10 w-10 items-center justify-center rounded-full border cursor-pointer ${
                   isLight ? "border-[#1B1B1B]/30" : "border-white/30"
                 }`}
               >
